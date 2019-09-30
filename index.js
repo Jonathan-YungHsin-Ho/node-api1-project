@@ -40,11 +40,6 @@ server.get('/api/users', (req, res) => {
 server.get('/api/users/:id', (req, res) => {
   const id = req.params.id;
 
-  // if (false) {
-  //   res
-  //     .status(404)
-  //     .json({ error: 'The user with the specified ID does not exist.' });
-  // } else {
   users
     .findById(id)
     .then(user => {
@@ -53,7 +48,7 @@ server.get('/api/users/:id', (req, res) => {
           .status(404)
           .json({ error: 'The user with the specified ID does not exist.' });
       } else {
-        res.send(user);
+        res.json(user);
       }
     })
     .catch(err =>
@@ -61,7 +56,23 @@ server.get('/api/users/:id', (req, res) => {
         .status(500)
         .json({ error: 'The user information could not be retrieved.' }),
     );
-  // }
+});
+
+server.delete('/api/users/:id', (req, res) => {
+  const id = req.params.id;
+
+  users
+    .remove(id)
+    .then(user => {
+      if (!user) {
+        res
+          .status(404)
+          .json({ error: 'The user with the specified ID does not exist.' });
+      } else {
+        res.json(user);
+      }
+    })
+    .catch();
 });
 
 const port = 8000;
