@@ -11,7 +11,7 @@ function App() {
   const handleAdd = character => {
     // console.log('add clicked!', character);
     axios
-      .post('http://localhost:8000/api/users', character)
+      .post('https://webapi-i-challenge-jyh.herokuapp.com/api/users', character)
       .then(res => {
         console.log(res);
       })
@@ -21,7 +21,7 @@ function App() {
   const handleDelete = id => {
     // console.log('deleted clicked!', id);
     axios
-      .delete(`http://localhost:8000/api/users/${id}`)
+      .delete(`https://webapi-i-challenge-jyh.herokuapp.com/api/users/${id}`)
       .then(res => {
         console.log(res);
       })
@@ -31,14 +31,17 @@ function App() {
   const handleEdit = (id, changes) => {
     console.log('edit clicked!', id, changes);
     axios
-      .put(`http://localhost:9000/api/users/${id}`, changes)
+      .put(
+        `https://webapi-i-challenge-jyh.herokuapp.com/api/users/${id}`,
+        changes,
+      )
       .then(res => console.log(res))
       .catch(err => console.log(err));
   };
 
   useEffect(() => {
     axios
-      .get('http://localhost:9000/api/users')
+      .get('https://webapi-i-challenge-jyh.herokuapp.com/api/users')
       .then(res => {
         // console.log(res.data);
         setUsers(res.data);
