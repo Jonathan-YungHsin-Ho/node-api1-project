@@ -15,7 +15,7 @@ export default function UserEdit({ users, handleEdit }) {
 
   return (
     <div className='form'>
-      <h3>Edit a Character:</h3>
+      <h3>Update a Character:</h3>
       <select onChange={handleSelect}>
         <option>Select a character:</option>
         {users.map(user => (
@@ -38,7 +38,7 @@ export default function UserEdit({ users, handleEdit }) {
         value={changes.bio}
         onChange={handleChange}
       />
-      <button onClick={() => handleEdit(id, changes)}>Edit</button>
+      <button onClick={() => handleEdit(id, changes)}>Update</button>
     </div>
   );
 }
