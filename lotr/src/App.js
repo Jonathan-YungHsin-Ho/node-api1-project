@@ -31,14 +31,14 @@ function App() {
   const handleEdit = (id, changes) => {
     console.log('edit clicked!', id, changes);
     axios
-      .put(`http://localhost:8000/api/users/${id}`, changes)
+      .put(`http://localhost:9000/api/users/${id}`, changes)
       .then(res => console.log(res))
       .catch(err => console.log(err));
   };
 
   useEffect(() => {
     axios
-      .get('http://localhost:8000/api/users')
+      .get('http://localhost:9000/api/users')
       .then(res => {
         // console.log(res.data);
         setUsers(res.data);
