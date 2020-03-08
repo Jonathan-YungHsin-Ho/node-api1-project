@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: url('./images/background.jpg') no-repeat center center fixed;
+  line-height: 1.5;
+  font-family: 'Playfair Display', serif;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.4rem;
+  margin: 2rem 0;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2.2rem;
+}
+
+h3 {
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+p {
+  font-size: 1.5rem;
+  max-width: 65ch;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 98%;
+  margin: 0 auto;
+}
+
+.form {
+  border: 1px solid black;
+  background-color: white;
+  opacity: 0.8;
+  width: 300px;
+  padding: 1rem 2%;
+  margin: 1rem 2%;
+  display: flex;
+  flex-direction: column;
+}
+
+input, select {
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+button {
+  padding: 0.5 rem;
+}
+
+.users-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 98%;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.user-card {
+  border: 1px solid black;
+  background-color: white;
+  opacity: 0.8;
+  width: 300px;
+  padding: 1rem 2%;
+  margin: 1rem 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  width: 30%;
+  text-align: center;
+  margin: 0 auto;
+  background-color: black;
+  color: white;
+  border: none;
+  font-family: inherit;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+button:hover {
+  background-color: gray;
+}
